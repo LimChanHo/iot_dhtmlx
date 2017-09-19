@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<toolbar>
+	<item id="run"   type="button"   img="run_sql.gif"  imgdis="run_sql.gif"  text="Run SQL"  />	
+</toolbar>

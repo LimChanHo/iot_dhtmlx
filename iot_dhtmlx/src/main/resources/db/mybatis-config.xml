@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "HTTP://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<settings>
+		<setting name="cacheEnabled" value="true" />
+		<setting name="useGeneratedKeys" value="true" />
+		<setting name="defaultExecutorType" value="REUSE" />
+	</settings>
+	
+	<typeAliases>
+    	<typeAlias alias="db" type="com.iot1.sql.db.dto.DbInfo"/>
+    	<typeAlias alias="dataBase" type="com.iot1.sql.db.dto.DataBase"/>
+    	<typeAlias alias="table" type="com.iot1.sql.db.dto.Table"/>
+    	<typeAlias alias="column" type="com.iot1.sql.db.dto.Column"/>
+	</typeAliases>
+	<mappers>
+		<mapper resource="com/iot1/sql/db/sql/db_sql.xml" />
+	</mappers>
+</configuration> 
+

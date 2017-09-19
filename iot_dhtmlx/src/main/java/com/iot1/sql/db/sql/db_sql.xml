@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd"> 
+  
+<mapper namespace="db">
+	<select id="SELECT_DB" parameterType="db" resultType="db">
+		select dinum, dbtitle, dburl, dbms, id, pwd, port
+		from db_info
+		where 1=1
+		<if test="diNum!=0">
+			and dinum = #{diNum}
+		</if>
+		order by dinum desc
+	</select>
+	
+	<select id="TABLE_SELECT" parameterType="dataBase"  resultType="table">
+		SELECT table_name as tablename FROM INFORMATION_SCHEMA.TABLES
+        where table_schema=#{database}
+       <if test="tableName != null">
+       		and table_name = #{table_name}
+       </if>
+	</select>
+	
+	<select id="TABLE_INFO_SELECT" parameterType="table"  resultType="column">
+		select  column_name as columnName, data_type as dataType, 
+		  character_maximum_length as characterMaximumLength,
+		  is_nullable as isNullable
+		 from INFORMATION_SCHEMA.columns 
+		where table_name=#{tableName}
+		and table_schema=database()
+		 order by ordinal_position;
+	</select>
+	
+	<select id = "TABLE_LIST_SELECT" parameterType="db" resultType="db" >
+		select * from #{tableName}	
+	</select>
+	
+	<select id="USE_DATABASE" parameterType="database">
+		use ${database}
+	</select>
+</mapper>
+
+
+
+
+
+

@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<toolbar>
+	<item id="ConnectionBtn"   type="button"   img="reload.gif" text="Connection"  />
+</toolbar>

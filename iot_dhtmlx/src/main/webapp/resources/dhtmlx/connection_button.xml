@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<toolbar>
+	<item id="addNewConnection"   type="button"   img="login.gif" text="add Connection"  />
+	<item id="connectionBtn"   type="button"   img="reload.gif" text="Connection"  />
+	<item id="disConnect"   type="button"   img="cancel.gif" text="DisConnection"  />
+</toolbar>
